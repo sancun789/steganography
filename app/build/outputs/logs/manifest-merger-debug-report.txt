@@ -1,0 +1,144 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\bd45dc2e45b25e6dbf235cb05bf5400f\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:1-57:12
+	package
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:3:5-39
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:5:5-30
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:4:5-28
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\bd45dc2e45b25e6dbf235cb05bf5400f\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\bd45dc2e45b25e6dbf235cb05bf5400f\AndroidManifest.xml:20:5-43
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:7:5-9:41
+INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:7:5-9:41
+	android:targetSdkVersion
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:9:9-38
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:8:9-34
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+		INJECTED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:12:5-80
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:12:22-77
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:15:5-71
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:15:22-68
+uses-permission#android.permission.READ_PROFILE
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:16:5-71
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:16:22-68
+uses-permission#android.permission.READ_CONTACTS
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:17:5-72
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:17:22-69
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:18:5-75
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:18:22-72
+uses-permission#android.permission.READ_CALL_LOG
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:19:5-72
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:19:22-69
+application
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:21:5-55:19
+MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\bd45dc2e45b25e6dbf235cb05bf5400f\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\bd45dc2e45b25e6dbf235cb05bf5400f\AndroidManifest.xml:22:5-20
+	android:label
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:24:9-41
+	android:icon
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:23:9-45
+	android:allowBackup
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:22:9-35
+	android:theme
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:25:9-40
+activity#com.tech_viks.steganoapp.FirstActivity
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:26:9-34:20
+	android:label
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:28:13-45
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:27:13-42
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:29:13-33:29
+action#android.intent.action.MAIN
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:30:17-69
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:30:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:32:17-77
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:32:27-74
+activity#com.tech_viks.steganoapp.DisplayMessage
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:35:9-37:79
+	android:label
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:37:13-67
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:36:13-43
+activity#com.tech_viks.steganoapp.EncryptMessage
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:38:9-40:77
+	android:label
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:40:13-65
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:39:13-43
+activity#com.tech_viks.steganoapp.GetExternalImage
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:41:9-51:20
+	android:label
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:43:13-70
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:42:13-45
+intent-filter#action:name:android.intent.action.VIEW+category:name:android.intent.category.DEFAULT+data:mimeType:image/*
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:44:13-50:29
+action#android.intent.action.VIEW
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:45:17-69
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:45:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:47:17-76
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:47:27-73
+data
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:49:17-52
+	android:mimeType
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:49:23-49
+activity#com.tech_viks.steganoapp.extract1
+ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:52:9-54:72
+	android:label
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:54:13-60
+	android:name
+		ADDED from D:\android work\StegnoApp1\app\src\main\AndroidManifest.xml:53:13-37
