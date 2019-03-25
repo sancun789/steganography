@@ -3,6 +3,7 @@ package com.tech_viks.steganoapp;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 
@@ -10,16 +11,23 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Environment;
+import android.widget.Toast;
+import java.util.Arrays;
+
+
+
+
 public class ProcessImage {
 
 	Bitmap bmp,bmp1;
 	double NoOfImagePixels;
 	PBE pbe;
-	PBE pbe1;
-	
+	PBE pbe1,pbe2;
+
+
 	
 	// =========== function to create stego image   ==============
-	public void createStegoImage(String imagePath,String MessageString,String secret){
+	public int createStegoImage(String imagePath,String MessageString,String secret){
 		int r,g,b;
 		//final String file_name;
 		try{
@@ -29,17 +37,48 @@ public class ProcessImage {
 			bmp.recycle();
 			int width = bmp1.getWidth();
 			int height = bmp1.getHeight();
+
+            String secret_en;
 			NoOfImagePixels = width*height;
-			
-			
-			
-			if(NoOfImagePixels*3<=MessageString.length()*8){
-				return;
+
+            pbe=new PBE();
+            pbe1=new PBE();
+
+
+
+
+			MessageString=pbe1.encrypt(MessageString,secret);
+			secret_en=pbe1.key(secret);
+
+			//MessageString=pbe1.encrypt(MessageString,secret);
+
+
+
+            String length_pass;
+            String length_msg;
+
+            length_pass=pbe1.lenth_encrypt(secret_en.length(),secret);//13byte
+            length_msg=pbe1.lenth_encrypt(MessageString.length(),secret);//13byte
+
+
+
+
+			if(NoOfImagePixels*3<=(MessageString.length()+secret_en.length())*8+26*8){
+				return 0;
 			}
+
+
+
+
+
 			int[] pixels = new int[width * height];
 			//=============================== setting message String ========================
-			String str = MessageString;
-			str=pbe1.encrypt(str,secret);
+
+			String str = length_pass+secret_en+length_msg+MessageString;
+			//String str = MessageString+length_msg+secret_en+length_pass;
+
+
+
 			//================ converting message into stream of bits ===================
 			String message_in_bits="";
 			String current_message_char_bits;
@@ -61,14 +100,21 @@ public class ProcessImage {
 			//================== changing bitmap pixel values ========================
 			for(int i=0;i<height;i++){
 				for (int j=0;j<width;j++){
+
 					if(m >= message_in_bits.length()){
 						break;
 					}
+
+
+					/*
 					if(i==0 && j==0){
 						//====== code to indicate message is present ==========
 						bmp1.setPixel(i, j, Color.rgb(83,0,str.length()));
 					}
-					else{								
+					else{	}
+					*/
+
+
 					r=(pixels[i*width+j] >> 16) & 0xff;
 					g=(pixels[i*width+j] >> 8) & 0xff;
 					b=(pixels[i*width+j]) & 0xff;
@@ -107,15 +153,18 @@ public class ProcessImage {
 					bmp1.setPixel(j,i, Color.argb(0,r,g,b));
 					m++;
 					
-					}
+
 				}						
 			}
 			//==================== end of for loop ===========================
+
+
 			//========== dialog to get file name from user ===========			
 		}
 		catch(Exception e){
 		
 		}
+		return 1;
 	}
 			
 	public boolean isSet(char ch){
@@ -156,6 +205,9 @@ public class ProcessImage {
 	
 	
 	public  String displayMessage(String imagePath,String pass){
+
+		pbe=new PBE();
+		pbe1=new PBE();
 		// ========== variable declaration ============
 		String r,g,b;   // stores red green and blue color values of current pixel
 		//imagePath =  Environment.getExternalStorageDirectory().toString() +"/Captures/screen.png";
@@ -163,18 +215,23 @@ public class ProcessImage {
 		
 		int width = bmp.getWidth();   // width of image		
 		int height = bmp.getHeight();  // height of image
+		int lenth_pass=0;
+		int lenth_msg=0;
+		String pass_get="";
 		
-		String msg="";    // stores actual message		
+		String msg="";    // stores actual message
 		int[] pixels = new int[width * height];  //stores all the pixel values
 		
 		// ========== putting pixel values from bitmap file to pixels array(int) ==============
 		bmp.getPixels(pixels, 0, width, 0, 0, width, height);
 		int textlength = pixels[0] & 0xff; // returns the length of message string blue color value of very first pixel
-		int check_condition = (pixels[0] >>16) &0xff;
+
+
+		//int check_condition = (pixels[0] >>16) &0xff;
 		//=========check if message is present or not ===========
-		if(check_condition!=83){
-			return "no hidden message";
-		}
+
+
+
 		//message.append("\nLength of message is : "+textlength);//display message 
 		int m=0;//counter variable
 		String messege_in_bits = "";// stores message in bin format ie. base 2 form
@@ -183,9 +240,8 @@ public class ProcessImage {
 		//start of for loop
 		for(int i=0;i<height;i++){
 			for(int j=0;j<width;j++){
-				if(i==0&&j==0){}
-				else{
-					if(m>=textlength*8){
+
+					if(m>=13*8){
 						break;
 					}
 					r=Integer.toString(((pixels[i*width+j] >> 16) & 0xff),2);
@@ -194,22 +250,22 @@ public class ProcessImage {
 					//getting from red color of pixel
 					messege_in_bits += r.charAt(r.length()-1);	
 					m++;
-					if(m>=textlength*8){
+					if(m>=13*8){
 						break;
 					}
 					//getting from green color of pixel
 					messege_in_bits += g.charAt(g.length()-1);	
 					m++;
-					if(m>=textlength*8){
+					if(m>=13*8){
 						break;
 					}
 					//getting from blue color from pixel
 					messege_in_bits += b.charAt(b.length()-1);	
 					m++;
-				}
+
 			}
 		}// end of for loop  
-		
+
 		//message.append("\nMessege in base2 form : "+messege_in_bits);
 		// =========== loop to convert message to String format form base2 ====================
 		for(int i=0;i<messege_in_bits.length();i+=8){
@@ -220,18 +276,277 @@ public class ProcessImage {
 		catch(Exception e){
 			//Toast.makeText(DisplayMessage.this, e.getMessage(), Toast.LENGTH_LONG).show();
 		}
-		// ====== displaying actual message ======================
+
+		try {
+			//msg = pbe.decrypt(msg, pass);
+			lenth_pass = pbe.lenth_decrypt(msg, pass);
+			//lenth_pass =13;
+		}
+		catch(Exception e){
+			//msg="wrong";
+		}
+
+
+
+
+		//get the password
+		msg="";
+		m=0;//counter variable
+		messege_in_bits = "";// stores message in bin format ie. base 2 form
+		// loop to get message in base 2 format
+
+		try{
+			//start of for loop
+			for(int i=0;i<height;i++){
+				for(int j=0;j<width;j++){
+
+						if(m>=lenth_pass*8+13*8){
+							break;
+						}
+						r=Integer.toString(((pixels[i*width+j] >> 16) & 0xff),2);
+						g=Integer.toString(((pixels[i*width+j] >> 8) & 0xff),2);
+						b=Integer.toString(((pixels[i*width+j]) & 0xff),2);
+						//getting from red color of pixel
+
+					    if(m<13*8) {
+							m++;
+						}else
+						{
+							messege_in_bits += r.charAt(r.length() - 1);
+							m++;
+						}
+
+
+						if(m>=lenth_pass*8+13*8){
+							break;
+						}
+						//getting from green color of pixel
+
+					if(m<13*8) {
+						m++;
+					}else {
+						messege_in_bits += g.charAt(g.length() - 1);
+						m++;
+
+					}
+
+						if(m>=lenth_pass*8+13*8){
+							break;
+						}
+						//getting from blue color from pixel
+
+					if(m<13*8) {
+						m++;
+					}else {
+						messege_in_bits += b.charAt(b.length() - 1);
+						m++;
+					}
+
+
+				}
+			}// end of for loop
+
+			//message.append("\nMessege in base2 form : "+messege_in_bits);
+			// =========== loop to convert message to String format form base2 ====================
+			for(int i=0;i<messege_in_bits.length();i+=8){
+				String temp1 = messege_in_bits.substring(i, i+8);
+				msg+=toBinary(temp1);
+			}
+		}
+		catch(Exception e){
+			//Toast.makeText(DisplayMessage.this, e.getMessage(), Toast.LENGTH_LONG).show();
+		}
+
+
+
+		try {
+			pass_get = pbe.decrypt(msg, pass);
+			//msg = lenth_pass+"";
+
+		}
+		catch(Exception e){
+			//msg="wrong1";
+		}
+
+
+		if(!pass_get.equals(pass))
+		{
+			msg="wrong password";
+			return msg;
+		}
+
+
+
+//get the length of message
+		msg="";
+		m=0;//counter variable
+		messege_in_bits = "";// stores message in bin format ie. base 2 form
+		// loop to get message in base 2 format
+
+		try{
+			//start of for loop
+			for(int i=0;i<height;i++){
+				for(int j=0;j<width;j++){
+
+					if(m>=lenth_pass*8+13*8+13*8){
+						break;
+					}
+					r=Integer.toString(((pixels[i*width+j] >> 16) & 0xff),2);
+					g=Integer.toString(((pixels[i*width+j] >> 8) & 0xff),2);
+					b=Integer.toString(((pixels[i*width+j]) & 0xff),2);
+					//getting from red color of pixel
+
+					if(m<13*8+lenth_pass*8) {
+						m++;
+					}else
+					{
+						messege_in_bits += r.charAt(r.length() - 1);
+						m++;
+					}
+
+
+					if(m>=lenth_pass*8+13*8+13*8){
+						break;
+					}
+					//getting from green color of pixel
+
+					if(m<13*8+lenth_pass*8) {
+						m++;
+					}else {
+						messege_in_bits += g.charAt(g.length() - 1);
+						m++;
+
+					}
+
+					if(m>=lenth_pass*8+13*8+13*8){
+						break;
+					}
+					//getting from blue color from pixel
+
+					if(m<13*8+lenth_pass*8) {
+						m++;
+					}else {
+						messege_in_bits += b.charAt(b.length() - 1);
+						m++;
+					}
+
+
+				}
+			}// end of for loop
+
+			//message.append("\nMessege in base2 form : "+messege_in_bits);
+			// =========== loop to convert message to String format form base2 ====================
+			for(int i=0;i<messege_in_bits.length();i+=8){
+				String temp1 = messege_in_bits.substring(i, i+8);
+				msg+=toBinary(temp1);
+			}
+		}
+		catch(Exception e){
+			//Toast.makeText(DisplayMessage.this, e.getMessage(), Toast.LENGTH_LONG).show();
+		}
+
+
+
+		try {
+			lenth_msg = pbe.lenth_decrypt(msg, pass);
+			//msg = lenth_msg+"";
+
+		}
+		catch(Exception e){
+			//msg="wrong2";
+		}
+
+
+
+//get the message
+		msg="";
+		m=0;//counter variable
+		messege_in_bits = "";// stores message in bin format ie. base 2 form
+		// loop to get message in base 2 format
+
+		try{
+			//start of for loop
+			for(int i=0;i<height;i++){
+				for(int j=0;j<width;j++){
+
+					if(m>=lenth_pass*8+13*8+13*8+lenth_msg*8){
+						break;
+					}
+					r=Integer.toString(((pixels[i*width+j] >> 16) & 0xff),2);
+					g=Integer.toString(((pixels[i*width+j] >> 8) & 0xff),2);
+					b=Integer.toString(((pixels[i*width+j]) & 0xff),2);
+					//getting from red color of pixel
+
+					if(m<13*8+lenth_pass*8+13*8) {
+						m++;
+					}else
+					{
+						messege_in_bits += r.charAt(r.length() - 1);
+						m++;
+					}
+
+
+					if(m>=lenth_pass*8+13*8+13*8+lenth_msg*8){
+						break;
+					}
+					//getting from green color of pixel
+
+					if(m<13*8+lenth_pass*8+13*8) {
+						m++;
+					}else {
+						messege_in_bits += g.charAt(g.length() - 1);
+						m++;
+
+					}
+
+					if(m>=lenth_pass*8+13*8+13*8+lenth_msg*8){
+						break;
+					}
+					//getting from blue color from pixel
+
+					if(m<13*8+lenth_pass*8+13*8) {
+						m++;
+					}else {
+						messege_in_bits += b.charAt(b.length() - 1);
+						m++;
+					}
+
+
+				}
+			}// end of for loop
+
+			//message.append("\nMessege in base2 form : "+messege_in_bits);
+			// =========== loop to convert message to String format form base2 ====================
+			for(int i=0;i<messege_in_bits.length();i+=8){
+				String temp1 = messege_in_bits.substring(i, i+8);
+				msg+=toBinary(temp1);
+			}
+		}
+		catch(Exception e){
+			//Toast.makeText(DisplayMessage.this, e.getMessage(), Toast.LENGTH_LONG).show();
+		}
+
+
 
 		try {
 			msg = pbe.decrypt(msg, pass);
-		}
-		catch(Exception e){
 
 		}
+		catch(Exception e){
+			//msg="wrong2";
+		}
+
+
+        stringtxt(msg);
 
 
 		return msg;
 	}
+
+
+
+
+
 	
 	public char toBinary(String toConvert){
 		int sum=0;
@@ -244,5 +559,17 @@ public class ProcessImage {
 		}
 		return (char)sum;
 	}
+
+
+    public static void stringtxt(String str){
+        try {
+            FileWriter fw = new FileWriter("/sdcard/steganography" + "/message.txt");//SD卡中的路径
+            fw.flush();
+            fw.write(str);
+            fw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 	
 }

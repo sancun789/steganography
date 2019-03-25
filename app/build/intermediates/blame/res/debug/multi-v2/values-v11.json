@@ -1,8 +1,27 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\android work\\StegnoApp1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
+            "outputFile": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v11\\values-v11.xml",
             "map": [
+                {
+                    "source": "D:\\android work\\StegnoApp1\\steganography\\app\\src\\main\\res\\values-v11\\styles.xml",
+                    "from": {
+                        "startLines": "6",
+                        "startColumns": "4",
+                        "startOffsets": "177",
+                        "endLines": "8",
+                        "endColumns": "12",
+                        "endOffsets": "306"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "184"
+                    }
+                },
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\values-v11\\values-v11.xml",
                     "from": {
@@ -20,25 +39,6 @@
                         "endLines": "10,16,22,28,34,40,41,42,47,52,54,56,61,62,63,114,166",
                         "endColumns": "12,12,12,12,12,12,88,100,12,12,12,12,12,70,82,12,12",
                         "endOffsets": "603,1028,1456,1882,2311,2736,2825,2926,3334,3754,3861,3990,4354,4425,4508,8257,12146"
-                    }
-                },
-                {
-                    "source": "D:\\android work\\StegnoApp1\\app\\src\\main\\res\\values-v11\\styles.xml",
-                    "from": {
-                        "startLines": "6",
-                        "startColumns": "4",
-                        "startOffsets": "177",
-                        "endLines": "8",
-                        "endColumns": "12",
-                        "endOffsets": "306"
-                    },
-                    "to": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "184"
                     }
                 }
             ]

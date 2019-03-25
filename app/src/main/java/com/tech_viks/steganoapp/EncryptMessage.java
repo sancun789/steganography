@@ -69,54 +69,88 @@ public class EncryptMessage extends Activity {
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
 					//Toast.makeText(ProcessImage.this, "working!", Toast.LENGTH_LONG).show();
-					
-					if(selected_image_URL != null && selected_image_URL != "")
-					{
-						en_key= secret.getText().toString();
-						processImage.createStegoImage(selected_image_URL, getMessageString.getText().toString(),en_key);
-						
-						
-						//========= layout inflater to inflate layout for dialog ============
-						LayoutInflater prompt_li = LayoutInflater.from(EncryptMessage.this);
-						View promptView = prompt_li.inflate(R.layout.user_single_input, null);
-						
-						//alert dialog to pop up dialog
-						AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EncryptMessage.this);
-						final EditText et = (EditText) promptView.findViewById(R.id.user_input);
-						et.setHint("Enter name of file");
-						
-						//dialog program
-						alertDialogBuilder.setView(promptView).setTitle("Enter name of new file")
-				        .setPositiveButton("Ok",new DialogInterface.OnClickListener() {
-							
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								// TODO Auto-generated method stub
-								if(et.getText().toString()!=null || et.getText().toString()!="")
-								{
-									message_error.setText(processImage.bitmapToFile(et.getText().toString()));
-								}//bitmapToFile(et.getText().toString());}
-								else{
-									//Toast.makeText(EncryptMessage.this, "failed to save image", Toast.LENGTH_LONG).show();
-								}
-							}
-						})
-				        .setNegativeButton("Cancel",new DialogInterface.OnClickListener() {
-							
-							@Override
-							public void onClick(DialogInterface dialog, int which) {
-								// TODO Auto-generated method stub
-								
-							}
-						})
-				
-				        .show();
-						
+					en_key= secret.getText().toString();
+
+
+					if(   getMessageString.getText().toString()==null || getMessageString.getText().toString().equals("") ) {
+
+						Toast.makeText(EncryptMessage.this, "no message", Toast.LENGTH_LONG)
+								.show();
+						return;
 					}
-					else{
-						Toast.makeText(EncryptMessage.this, "image file not selected...", Toast.LENGTH_LONG)
-						.show();
+
+
+
+
+					if(   en_key!=null && !en_key.equals("") ) {
+
+
+						if (selected_image_URL != null && selected_image_URL != "") {
+
+
+							if(processImage.createStegoImage(selected_image_URL, getMessageString.getText().toString(), en_key)==0)
+							{
+								Toast.makeText(EncryptMessage.this, "the text is too big", Toast.LENGTH_LONG)
+										.show();
+								return;
+
+							};
+
+
+							//========= layout inflater to inflate layout for dialog ============
+							LayoutInflater prompt_li = LayoutInflater.from(EncryptMessage.this);
+							View promptView = prompt_li.inflate(R.layout.user_single_input, null);
+
+							//alert dialog to pop up dialog
+							AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(EncryptMessage.this);
+							final EditText et = (EditText) promptView.findViewById(R.id.user_input);
+							et.setHint("Enter name of file");
+
+							//dialog program
+							alertDialogBuilder.setView(promptView).setTitle("Enter name of new file")
+									.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+
+										@Override
+										public void onClick(DialogInterface dialog, int which) {
+											// TODO Auto-generated method stub
+											if (et.getText().toString() != null || et.getText().toString() != "") {
+												message_error.setText(processImage.bitmapToFile(et.getText().toString()));
+											}//bitmapToFile(et.getText().toString());}
+											else {
+												//Toast.makeText(EncryptMessage.this, "failed to save image", Toast.LENGTH_LONG).show();
+											}
+										}
+									})
+									.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+
+										@Override
+										public void onClick(DialogInterface dialog, int which) {
+											// TODO Auto-generated method stub
+
+										}
+									})
+
+									.show();
+
+						} else {
+							Toast.makeText(EncryptMessage.this, "image file not selected...", Toast.LENGTH_LONG)
+									.show();
+						}
+
+					}else {
+						Toast.makeText(EncryptMessage.this, "no secret key", Toast.LENGTH_LONG)
+								.show();
 					}
+
+
+
+
+
+
+
+
+
+
 				}
 			});
 			

@@ -8,16 +8,21 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.text.method.ScrollingMovementMethod;
+import android.widget.TextView;
 import android.widget.TextView;
 import android.widget.Toast;
+import java.io.FileWriter;
+import java.io.IOException;
 
 public class DisplayMessage extends Activity {
 
 	// ========= variable declaration =============
 	TextView message ;
-	TextView key ;
+
 	String imageToProcess;
-	String pass ;
+	String pass;
+
 	ProcessImage process_image;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +32,12 @@ public class DisplayMessage extends Activity {
 		
 		setContentView(R.layout.activity_display_message);
 		message = (TextView)findViewById(R.id.messageText);
-		key = (TextView)findViewById(R.id.e_key);
+		message.setMovementMethod(ScrollingMovementMethod.getInstance());
+
 		Bundle bndl = getIntent().getExtras();
+
 		imageToProcess = bndl.getString("ImageURL");
+
 		if(imageToProcess==null || imageToProcess==""){
 		 Toast.makeText(getApplicationContext(), "no image seleted", Toast.LENGTH_LONG).show();
 		}
@@ -37,14 +45,29 @@ public class DisplayMessage extends Activity {
 
 
 
-		//pass= key.getText().toString();
-		pass= "555";
+
+		pass=bndl.getString("pass");
+
 		String message_to_show = process_image.displayMessage(imageToProcess,pass);
 
 
+				if(!message_to_show.equals("wrong password"))
+				{
+					Toast.makeText(getApplicationContext(), "correct secret key", Toast.LENGTH_LONG).show();
+					//Toast.makeText(getApplicationContext(), message_to_show, Toast.LENGTH_LONG).show();
+					message.setText("Message:" + message_to_show);
+					//stringtxt(message_to_show);
+					Toast.makeText(getApplicationContext(), "save the message at /sdcard/steganography", Toast.LENGTH_LONG).show();
 
-		Toast.makeText(getApplicationContext(), message_to_show, Toast.LENGTH_LONG).show();
-		message.setText("Message:"+message_to_show);
+				} else {
+					Toast.makeText(getApplicationContext(), "wrong password", Toast.LENGTH_LONG).show();
+
+				}
+
+
+
+
+
 		}
 		catch(Exception e){
 			Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_LONG).show();
@@ -61,5 +84,18 @@ public class DisplayMessage extends Activity {
 		startActivity(backPage);
 		finish();
 	}
+
+
+	public static void stringtxt(String str){
+		try {
+			FileWriter fw = new FileWriter("/sdcard/steganography" + "/message.txt");//SD卡中的路径
+			fw.flush();
+			fw.write(str);
+			fw.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	
 }

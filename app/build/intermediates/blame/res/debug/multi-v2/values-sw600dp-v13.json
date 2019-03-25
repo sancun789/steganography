@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\android work\\StegnoApp1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-22.2.1.aar\\48b9a353b4ddb838f3ce25764458e070\\res\\values-sw600dp\\values-sw600dp.xml",

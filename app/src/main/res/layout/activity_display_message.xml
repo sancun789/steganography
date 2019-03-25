@@ -16,6 +16,7 @@
         android:hint="" 
         android:singleLine="false"
         android:gravity="center"
+        android:scrollbars="vertical"
         android:textSize="20sp"
         android:textColor="#000"/>
 

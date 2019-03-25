@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -21,10 +22,17 @@ import android.widget.Toast;
 
 import com.tech_viks.steganoapp.R;
 
+import java.util.Arrays;
+
 public class extract1 extends Activity {
     String selected_image_URL; // stores url of the image to be used
     private static final int SELECT_PICTURE = 1;
     Button dec;
+    String pass1 ;
+    TextView key ;
+    PBE pbe;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +43,7 @@ public class extract1 extends Activity {
         setContentView(R.layout.activity_extract1);
 
         dec = (Button)findViewById(R.id.extract);
+        key = (TextView)findViewById(R.id.e_key);
 
         try{
 
@@ -59,11 +68,63 @@ public class extract1 extends Activity {
 
 
     private void choose_image(){
+        pass1= key.getText().toString();
+        if(   pass1!=null && !pass1.equals("") ) {
 
-		Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent,"Select Picture"), SELECT_PICTURE);
+            Intent intent = new Intent();
+            intent.setType("image/*");
+            intent.setAction(Intent.ACTION_GET_CONTENT);
+            startActivityForResult(Intent.createChooser(intent,"Select Picture"), SELECT_PICTURE);
+
+        } else {
+
+
+
+            //test code
+            /*
+            pbe=new PBE();
+
+            int x=949494491;
+
+
+            //String ssz="this_is_password_and_length_is_a_bit_long" ;
+            String ssz="666123" ;
+            String ss="ssssssssss" ;
+
+            try{
+
+            //x=pbe.lenth_decrypt(ss,ssz);
+                //ss=pbe.encrypt(ss,ssz);
+                ss=pbe.key(ssz);
+
+                //ss=pbe.lenth_encrypt(ssz.length(),ssz);
+                x=pbe.lenth_decrypt(ss,ssz);
+
+                ss=pbe.decrypt(ss,ssz);
+
+               // ss=pbe.decrypt(ss,ssz);
+            }
+
+            catch(Exception e){
+                Toast.makeText(extract1.this, ssz, Toast.LENGTH_LONG)
+                        .show();
+            }
+
+            String qq="sad";
+            String q="159";
+            q=q+qq;
+
+           //ss=String.valueOf(x);
+
+                    Toast.makeText(extract1.this,ss , Toast.LENGTH_LONG)
+                    .show();
+*/
+
+
+           Toast.makeText(extract1.this, "no secret key", Toast.LENGTH_LONG)
+                   .show();
+        }
+
 }
 
 
@@ -77,10 +138,35 @@ public class extract1 extends Activity {
 
                 if(selected_image_URL!=null || selected_image_URL!=""){
                     //Toast.makeText(FirstActivity.this, selected_image_URL, Toast.LENGTH_LONG).show();
+
                     Intent toDisplayMessage = new Intent(extract1.this,DisplayMessage.class);
                     toDisplayMessage.putExtra("ImageURL", selected_image_URL);
-                    startActivity(toDisplayMessage);
-                    finish();
+
+
+
+
+
+
+                    toDisplayMessage.putExtra("pass", pass1);
+
+
+
+                    if(   pass1!=null && !pass1.equals("") ) {
+                        startActivity(toDisplayMessage);
+                        finish();
+
+                } else {
+
+                   Toast.makeText(extract1.this, "no secret key", Toast.LENGTH_LONG)
+                          .show();
+                }
+
+
+
+
+
+
+
                 }
                 else{
                     Toast.makeText(extract1.this, "Something went wrong...try again", Toast.LENGTH_LONG)

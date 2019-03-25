@@ -11,15 +11,13 @@ import javax.crypto.spec.PBEParameterSpec;
 import android.annotation.SuppressLint;
 import android.util.Base64;
 
+
 /*
  * PBE——Password-based encryption（基于密码加密）。<br>
  * 其特点在于口令由用户自己掌管，不借助任何物理媒体；采用随机数（这里我们叫做盐）杂凑多重加密等方法保证数据的安全性。<br>
  * 是一种简便的加密方式。<br>
  *
- * @author <a href="mailto:hongtenzone@foxmail.com">hongten</a><br>
- * @date 2013-4-3<br>
- *
- * @see <a href="http://blog.csdn.net/hexingzhi/article/details/7424872">原文</a>
+
  */
 public class PBE {
 
@@ -87,6 +85,30 @@ public class PBE {
      * @return 加密后的密文字符串
      * @throws Exception
      */
+
+
+
+    //encrupt the secret key
+    public  String key( String password)
+            throws Exception {
+
+        Key key = getPBEKey(password);
+        byte[] salt = getSalt();
+        saltStr = Base64.encodeToString(salt, Base64.DEFAULT);
+
+        PBEParameterSpec parameterSpec = new PBEParameterSpec(salt,ITERATIONCOUNT);
+
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+
+        cipher.init(Cipher.ENCRYPT_MODE, key, parameterSpec);
+
+        byte encipheredData[] = cipher.doFinal(password.getBytes("UTF-8"));
+
+
+        return Base64.encodeToString(encipheredData, Base64.DEFAULT);
+    }
+
+
     public  String encrypt(String plaintext, String password)
             throws Exception {
 
@@ -102,8 +124,71 @@ public class PBE {
 
         byte encipheredData[] = cipher.doFinal(plaintext.getBytes("UTF-8"));
 
+
         return Base64.encodeToString(encipheredData, Base64.DEFAULT);
     }
+
+
+    public  String lenth_encrypt(int plaintext, String password)
+            throws Exception {
+
+        Key key = getPBEKey(password);
+        byte[] salt = getSalt();
+        saltStr = Base64.encodeToString(salt, Base64.DEFAULT);
+
+        PBEParameterSpec parameterSpec = new PBEParameterSpec(salt,ITERATIONCOUNT);
+
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+
+        cipher.init(Cipher.ENCRYPT_MODE, key, parameterSpec);
+
+        byte encipheredData[] = cipher.doFinal(intToByteArray(plaintext));
+
+        Base64.encode(encipheredData,Base64.DEFAULT);
+        return Base64.encodeToString(encipheredData, Base64.DEFAULT);
+    }
+
+    public int lenth_decrypt(String ciphertext, String password)
+            throws Exception {
+
+        Key key = getPBEKey(password);
+        //byte[] salt = Base64.decode(saltStr,Base64.DEFAULT);
+
+        PBEParameterSpec parameterSpec = new PBEParameterSpec(getSalt(),
+                ITERATIONCOUNT);
+
+        Cipher cipher = Cipher.getInstance(ALGORITHM);
+
+        cipher.init(Cipher.DECRYPT_MODE, key, parameterSpec);
+
+        byte[] passDec = cipher.doFinal(Base64.decode(ciphertext, Base64.DEFAULT));
+        return byteArrayToInt(passDec);
+    }
+
+
+
+
+
+
+
+    public static int byteArrayToInt(byte[] b) {
+        return   b[3] & 0xFF |
+                (b[2] & 0xFF) << 8 |
+                (b[1] & 0xFF) << 16 |
+                (b[0] & 0xFF) << 24;
+    }
+    public static byte[] intToByteArray(int a) {
+        return new byte[] {
+                (byte) ((a >> 24) & 0xFF),
+                (byte) ((a >> 16) & 0xFF),
+                (byte) ((a >> 8) & 0xFF),
+                (byte) (a & 0xFF)
+        };
+    }
+
+
+
+
     public String getSaltStr(){
         return saltStr;
     }
@@ -136,5 +221,11 @@ public class PBE {
         byte[] passDec = cipher.doFinal(Base64.decode(ciphertext, Base64.DEFAULT));
         return new String(passDec);
     }
+
+
+
+
+
+
 
 }
