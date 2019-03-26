@@ -62,7 +62,7 @@ public class ProcessImage {
 
 
 
-
+         //exam if the picture could contain all the string
 			if(NoOfImagePixels*3<=(MessageString.length()+secret_en.length())*8+26*8){
 				return 0;
 			}

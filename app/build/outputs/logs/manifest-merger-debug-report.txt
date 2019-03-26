@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:support-v4:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-22.2.1.aar\bd45dc2e45b25e6dbf235cb05bf5400f\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.3.aar\e522ebceec8211b0800a051d3b875727\AndroidManifest.xml:2:1-11:12
-INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:3:5-39
 		INJECTED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml
@@ -76,7 +76,7 @@ ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest
 	android:name
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:19:22-69
 application
-ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:21:5-55:19
+ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:21:5-56:19
 MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-22.2.1.aar\48b9a353b4ddb838f3ce25764458e070\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:appcompat-v7:22.2.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-22.2.1.aar\fa7fdc02ec47b203799d52e8ea30930c\AndroidManifest.xml:22:5-20
@@ -110,13 +110,13 @@ ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest
 	android:name
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:32:27-74
 activity#com.tech_viks.steganoapp.DisplayMessage
-ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:35:9-37:79
+ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:35:9-37:70
 	android:label
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:37:13-67
 	android:name
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:36:13-43
 activity#com.tech_viks.steganoapp.EncryptMessage
-ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:38:9-40:77
+ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:38:9-40:68
 	android:label
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:40:13-65
 	android:name
@@ -142,8 +142,12 @@ ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest
 	android:mimeType
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:49:23-49
 activity#com.tech_viks.steganoapp.extract1
-ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:52:9-54:72
+ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:52:9-54:63
 	android:label
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:54:13-60
 	android:name
 		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:53:13-37
+activity#com.tech_viks.steganoapp.over
+ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:55:9-51
+	android:name
+		ADDED from D:\android work\StegnoApp1\steganography\app\src\main\AndroidManifest.xml:55:19-39

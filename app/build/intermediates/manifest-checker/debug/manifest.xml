@@ -54,6 +54,7 @@
         <activity
             android:name="com.tech_viks.steganoapp.extract1"
             android:label="@string/title_activity_extract1" />
+        <activity android:name="com.tech_viks.steganoapp.over" />
 
         <provider
             android:name="com.android.tools.ir.server.InstantRunContentProvider"

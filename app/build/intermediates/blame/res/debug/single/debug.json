@@ -4,16 +4,16 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-xhdpi\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_ic_voice_search_api_mtrl_alpha.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\layout\\notification_template_lines.xml"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_ic_menu_selectall_mtrl_alpha.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-hdpi\\abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_lines.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\layout\\notification_template_lines.xml"
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_ic_voice_search_api_mtrl_alpha.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-hdpi\\abc_ic_voice_search_api_mtrl_alpha.png"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_abc_popup_background_mtrl_mult.9.png.flat",
@@ -60,16 +60,16 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-mdpi\\abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_gallary3.png.flat",
-        "source": "D:\\android work\\StegnoApp1\\steganography\\app\\src\\main\\res\\drawable\\icon_gallary3.png"
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_abc_switch_track_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-xxxhdpi\\abc_switch_track_mtrl_alpha.9.png"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_abc_menu_hardkey_panel_mtrl_mult.9.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-mdpi\\abc_menu_hardkey_panel_mtrl_mult.9.png"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_abc_switch_track_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-xxxhdpi\\abc_switch_track_mtrl_alpha.9.png"
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable_icon_gallary3.png.flat",
+        "source": "D:\\android work\\StegnoApp1\\steganography\\app\\src\\main\\res\\drawable\\icon_gallary3.png"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_media_cancel_action.xml.flat",
@@ -116,28 +116,28 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-22.2.1.aar\\48b9a353b4ddb838f3ce25764458e070\\res\\layout\\layout_snackbar.xml"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_abc_spinner_mtrl_am_alpha.9.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-xxxhdpi\\abc_spinner_mtrl_am_alpha.9.png"
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-ldrtl-mdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-hdpi\\abc_list_selector_disabled_holo_light.9.png"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-ldrtl-mdpi\\abc_ic_menu_copy_mtrl_am_alpha.png"
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_abc_spinner_mtrl_am_alpha.9.png.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-xxxhdpi\\abc_spinner_mtrl_am_alpha.9.png"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_list_longpressed_holo.9.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-hdpi\\abc_list_longpressed_holo.9.png"
     },
     {
-        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_separator.xml.flat",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-22.2.1.aar\\48b9a353b4ddb838f3ce25764458e070\\res\\layout\\design_navigation_item_separator.xml"
-    },
-    {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_popup_exit.xml.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\anim\\abc_popup_exit.xml"
+    },
+    {
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_navigation_item_separator.xml.flat",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-22.2.1.aar\\48b9a353b4ddb838f3ce25764458e070\\res\\layout\\design_navigation_item_separator.xml"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_first.xml.flat",
@@ -1046,6 +1046,10 @@
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_textfield_default_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-22.2.1.aar\\fa7fdc02ec47b203799d52e8ea30930c\\res\\drawable-hdpi\\abc_textfield_default_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_over.xml.flat",
+        "source": "D:\\android work\\StegnoApp1\\steganography\\app\\src\\main\\res\\layout\\activity_over.xml"
     },
     {
         "merged": "D:\\android work\\StegnoApp1\\steganography\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_abc_btn_check_to_on_mtrl_015.png.flat",

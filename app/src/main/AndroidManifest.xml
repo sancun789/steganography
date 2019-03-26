@@ -34,10 +34,10 @@
         </activity>
         <activity
             android:name=".DisplayMessage"
-            android:label="@string/title_activity_display_message"></activity>
+            android:label="@string/title_activity_display_message" />
         <activity
             android:name=".EncryptMessage"
-            android:label="@string/title_activity_process_image"></activity>
+            android:label="@string/title_activity_process_image" />
         <activity
             android:name=".GetExternalImage"
             android:label="@string/title_activity_get_external_image">
@@ -51,7 +51,8 @@
         </activity>
         <activity
             android:name=".extract1"
-            android:label="@string/title_activity_extract1"></activity>
+            android:label="@string/title_activity_extract1" />
+        <activity android:name=".over"></activity>
     </application>
 
 </manifest>

@@ -87,7 +87,7 @@ public class EncryptMessage extends Activity {
 
 						if (selected_image_URL != null && selected_image_URL != "") {
 
-
+							//exam if the picture could contain all the string
 							if(processImage.createStegoImage(selected_image_URL, getMessageString.getText().toString(), en_key)==0)
 							{
 								Toast.makeText(EncryptMessage.this, "the text is too big", Toast.LENGTH_LONG)
@@ -114,7 +114,18 @@ public class EncryptMessage extends Activity {
 										public void onClick(DialogInterface dialog, int which) {
 											// TODO Auto-generated method stub
 											if (et.getText().toString() != null || et.getText().toString() != "") {
-												message_error.setText(processImage.bitmapToFile(et.getText().toString()));
+												String path =processImage.bitmapToFile(et.getText().toString());
+
+												message_error.setText(path);
+
+
+												Intent toprocess = new Intent(EncryptMessage.this,over.class);
+												//toDisplayMessage.putExtra("ImageURL", selected_image_URL);
+												toprocess.putExtra("path", path);
+												startActivity(toprocess);
+
+												finish();
+
 											}//bitmapToFile(et.getText().toString());}
 											else {
 												//Toast.makeText(EncryptMessage.this, "failed to save image", Toast.LENGTH_LONG).show();
